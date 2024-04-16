@@ -1,0 +1,68 @@
+:root {
+    --primary-color: #612674;
+    --color-white: #FFF;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+.max-width {
+    max-width: 70.25rem;
+}
+
+.header__topo {
+    text-align: center;
+}
+
+.header__nav {
+    background-color: var(--primary-color);
+}
+
+.header__nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.header__nav a {
+    display: block;
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 1rem;
+}
+
+.header__nav a:hover {
+    background-color: color-mix(in srgb, var(--primary-color), #FFF 10%);
+}
+
+@media screen and (min-width: 48.75rem) {
+    .header__topo {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header__logo {
+        margin-left: 2rem;
+    }
+
+    .header__nav {
+        background-color: initial;
+    }
+
+    .header__nav li {
+        display: inline-block;
+    } 
+
+    .header__nav a {
+        color: var(--primary-color);
+    }
+
+    .header__nav a:hover {
+        background-color: color-mix(in srgb, var(--primary-color), #FFF 85%);
+    }
+}
+
