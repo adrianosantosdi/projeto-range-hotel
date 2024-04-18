@@ -1,9 +1,12 @@
 :root {
     --primary-color: #612674;
+    --color-azul-claro: #58C4C4;
     --color-white: #FFF;
+    --color-cinza-claro: #F6F6F6;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -13,6 +16,7 @@ body {
 
 .max-width {
     max-width: 70.25rem;
+    margin: auto;
 }
 
 .header__topo {
@@ -26,6 +30,7 @@ body {
 .header__nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .header__nav a {
@@ -38,6 +43,132 @@ body {
 .header__nav a:hover {
     background-color: color-mix(in srgb, var(--primary-color), #FFF 10%);
 }
+
+.hero-banner {
+    text-align: center;
+    background-color: var(--color-cinza-claro);
+    padding: 1rem;
+}
+
+.hero-banner-icon-play {
+    width: 5rem;
+    height: 5rem;
+    display: none;
+}
+
+.hero-banner-icon-play img {
+    width: 100%;
+}
+
+.hero-banner-title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.hero-banner-subtitulo {
+    font-size: 1rem;
+    color: color-mix(in srgb, var(--primary-color), #FFF);
+    line-height: 1.5;
+}
+
+.hero-banner-btn {
+    display: inline-block;
+    padding: .9rem 2.5rem;
+    background-color: var(--color-azul-claro);
+    text-decoration: none;
+    color: var(--color-white);
+    border-radius: 5px;
+}
+
+.middle-content {
+    background-color: var(--color-cinza-claro);
+    text-align: center;
+    padding: 2rem;
+}
+
+.middle-content a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.middle-content-title {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 1.25rem;
+}
+
+ion-icon {   
+    color: var(--primary-color);
+    font-size: 3.5rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.col {
+    flex: 1 0 auto;
+    width: 100%;
+}
+
+.col-sm-12 {
+    width: 100%;
+}
+
+.main-content {
+    padding: 2rem;
+}
+
+.main-content p {
+    line-height: 1.2;
+}
+
+.main-content-article {
+    container: main-content / inline-size;
+}
+
+@container main-content (min-width: 600px) {
+    .main-content-container {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .main-content-title {
+        margin-top: 0;
+    }
+
+    .main-content-img img {
+        max-height: 182px;
+    }
+}
+
+.main-content-img {
+    width: 100%;
+}
+
+.main-content-title {
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-weight: normal;
+    letter-spacing: .2rem;
+    font-size: 1.25rem;
+}
+
+.main-content .row {
+    row-gap: 4rem;
+}
+
+.footer {
+    background-color: #25303E;
+    color: #83969F;
+    text-align: center;
+    padding: 2rem;
+}
+
+
 
 @media screen and (min-width: 48.75rem) {
     .header__topo {
@@ -55,7 +186,7 @@ body {
 
     .header__nav li {
         display: inline-block;
-    } 
+    }
 
     .header__nav a {
         color: var(--primary-color);
@@ -66,3 +197,77 @@ body {
     }
 }
 
+@media screen and (min-width: 48.75rem) {
+    .hero-banner {
+        background-color: var(--primary-color);
+        color: var(--color-white);
+    }
+
+    .hero-banner-icon-play {
+        display: block;
+        margin: auto;
+    }
+
+    .hero-banner-title,
+    .hero-banner-subtitulo {
+        color: var(--color-white);
+    }
+}
+
+@media screen and (min-width: 56.25rem) {
+    .hero-banner {
+        background: url('../img/bg_topo_1198x670.jpg');
+        aspect-ratio: 1198 / 670;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .hero-banner .max-width {
+        margin: initial;
+        margin-bottom: 4rem;
+        width: 75%;
+    }
+}
+
+@media screen and (min-width: 74rem) {
+    .hero-banner {
+        background: linear-gradient(transparent, var(--primary-color)), url('../img/bg_topo_1600x1374.jpg');
+        background-blend-mode: soft-light ;
+        background-position: center top;
+        background-color: var(--primary-color);
+        background-repeat: no-repeat;
+        max-height: 80vh;
+        width: 100%;
+    }
+
+    .hero-banner .max-width {
+        width: 50%;
+    }
+
+    .hero-banner-icon-play {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .hero-banner-title,
+    .hero-banner-subtitulo {
+        text-shadow: 4px 4px 2px rgb(0, 0, 0 /.8) ;
+    }
+}
+
+@media screen and (min-width: 48.75rem) {
+    .col-md-6 {
+        width: calc(50% - 1rem);
+    }
+}
+
+@media screen and (min-width: 74rem) {
+    .col-xl-3 {
+        width: calc(25% - 1rem);
+    }
+
+    .col-xl-6 {
+        width: calc(50% - 1rem);
+    }
+}
